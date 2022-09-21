@@ -21,6 +21,7 @@
     background-color: #1f1f1f;
     width: 100%;
     height: 100%;
+    display: flex;
   }
   
   header .header-home{
@@ -34,7 +35,7 @@
     text-align: left;
     padding: 0 10px 0 10px;
     border-right: 3px solid #383737;
-    float: left;
+    /* float: left; */
   }
   
   a:hover, a:active {
@@ -42,16 +43,16 @@
   }
   
   header nav ul{
-    display: block;
+    display: flex;
     margin: 20px 0px 0px 0px;
     width: fit-content;
-    float: left;
+    /* float: left; */
     padding: 0;
   }
   
   header nav ul li{
     /* display: inline-block; */
-    float: left;
+    /* float: left; */
     list-style: none;
     padding: 0px 16px;
   }
@@ -63,6 +64,8 @@
     line-height: 60px;
   }
 
+ 
+  /* home */
   .mainGrid{
     float: left;
     min-height: 100%;
@@ -86,8 +89,43 @@
   }
 
 
+
+
+  p{
+    font: 20px;
+  }
+
+
+  /* Gallery */
+  .galleryGrid{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }  
+  
+  .galleryGrid img{
+    width: auto;
+    height: 200px;
+  }  
+  
+  .galleryGrid2 img{
+    width: 200px;
+    height: 200px;
+  }
+
+  .galleryGrid2{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(2, auto);
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 5rem; 
+  }
+  
   footer {
-    margin-top: 7rem;
+    margin-top: 6rem;
     margin-bottom: 1rem;
     font-size: 13px;
     text-transform: uppercase;
@@ -105,8 +143,8 @@
   footer a:hover, footer a:focus {
     background-color: #B80C09;
     color: #B0BFBC;
-  }
+  }  
 
-  p{
-    font: 20px;
+  .codeFooter{
+    padding-top: 11rem;
   }
