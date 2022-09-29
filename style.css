@@ -25,7 +25,7 @@
   }
   
   header .header-home{
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 900;
     color:#B0BFBC;
     text-transform: uppercase;
@@ -35,7 +35,18 @@
     text-align: left;
     padding: 0 10px 0 10px;
     border-right: 3px solid #383737;
-    /* float: left; */
+  }  
+  
+  header .header-home2{
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 38px;
+    color: #B0BFBC;
+    display: block;
+    margin: 31px 0;
+    text-align: left;
+    padding: 0 10px 0 10px;
+    border-right: 3px solid #383737;
   }
   
   a:hover, a:active {
@@ -46,36 +57,31 @@
     display: flex;
     margin: 20px 0px 0px 0px;
     width: fit-content;
-    /* float: left; */
     padding: 0;
   }
   
   header nav ul li{
-    /* display: inline-block; */
-    /* float: left; */
     list-style: none;
     padding: 0px 16px;
   }
   
   header nav ul li a{
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: 900;
     color: #B0BFBC;
     text-transform: uppercase;
     line-height: 60px;
   }
+  .header-gallery{
+    font-size: 20px;
+    font-weight: 900;
+  }
 
  
   /* home */
-  .mainGrid{
-    float: left;
-    min-height: 100%;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-  }
-
   .name{
-    font-size: 40px;
-    /* padding-top: 100px; */
+    font-size: 50px;
+    margin: 2rem 0;
   }
 
   .grid{
@@ -98,39 +104,103 @@
 
   /* Gallery */
   .galleryGrid{
+    padding: 10px;
+    max-width: 1100px;
+    background: #292929;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(4, auto);
-    gap: 10px;
-    justify-content: center;
-    margin-bottom: 1rem;
-  }  
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-auto-rows: 250px;
+    grid-auto-flow: dense;
+  }
   
-  .galleryGrid img{
-    width: auto;
-    height: 200px;
-  }  
+  .v-long{
+    grid-row: span 2;
+  }
   
-  .galleryGrid2 img{
-    width: 200px;
-    height: 200px;
+  .h-long{
+    grid-column: span 2;
   }
 
-  .galleryGrid2{
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    grid-template-rows: repeat(2, auto);
-    gap: 10px;
-    justify-content: center;
-    margin-bottom: 5rem; 
+  .galleryGrid div img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .popup {
+    text-align: center;
+    position: fixed;
+    padding: 10px 10px 10px;
+    max-width: 500px;
+    border-radius: 0.5em;
+    top: 50%;
+    left: 50%;
+    color: #B0BFBC;
+    transform: translate(-50%, -50%);
+    background-color:  #292929;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s, visibility 0s linear 0.5s;
+    z-index: 1;
+  }
+  .popup:target {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+  }
+  .popup .close {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    padding: 5px;
+    transition: color 0.3s;
+  }
+  .close-popup {
+    background-color: rgba(0, 0, 0, 0.7);
+    cursor: default;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0s linear 0.5s;
+  }
+  .popup:target + .close-popup {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+  }
+
+  @media(max-width: 560px){
+    .v-long{
+      grid-row: span 1;
+    }
+
+    .h-long{
+      grid-column: span 1;
+    }
   }
   
-  footer {
-    margin-top: 6rem;
-    margin-bottom: 1rem;
-    font-size: 13px;
-    text-transform: uppercase;
-    text-align: center;
+  /* Artworks */
+    
+  .portfolio-item {
+    margin-top: 100px;
+    padding: 40px;
+    background-color: #292929;
+    color: #B0BFBC;
+    font-size: 30px;
+    max-width: 1000px;
+    margin: 30px auto;
     }
+  
+  /* Footer */
+  footer{
+    margin: 3rem 0 1rem 0;
+  }
   
   footer a {
     text-decoration: none;
@@ -146,5 +216,5 @@
   }  
 
   .codeFooter{
-    padding-top: 11rem;
+    padding-top: 10rem;
   }
